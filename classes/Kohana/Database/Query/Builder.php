@@ -110,6 +110,25 @@ abstract class Kohana_Database_Query_Builder extends Database_Query {
 						// Quote the min and max value
 						$value = $min.' AND '.$max;
 					}
+					//Sphinx match
+					elseif (strpos($op, 'MATCH') !== FALSE)
+					{
+						$value = $db->escape ($value, FALSE);
+						switch ($op)
+						{
+							case 'MATCH_EXACT':
+								$value = '^' . $value . '$';
+							break;
+							case 'MATCH_START':
+								$value = '^' . $value;
+							break;
+							case 'MATCH_END':
+								$value = $value . '$';
+							break;
+						}
+						$column = sprintf ("MATCH ('%s %s')", $column, '"' . $value . '"');
+						$value = $op = '';
+					}
 					elseif ((is_string($value) AND array_key_exists($value, $this->_parameters)) === FALSE)
 					{
 						// Quote the value, it is not a parameter

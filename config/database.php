@@ -87,4 +87,14 @@ return array
 // 		'charset'      => 'utf8',
 // 		'caching'      => FALSE,
 // 	),
+
+//    'sphinx' => array
+//    (
+//      'type'       => 'SphinxQL',
+// 		'connection' => array(
+// 			'hostname'   => 'localhost',
+// 			'port'		 => 9306,
+// 		),
+// 		'charset'      => 'utf8',
+//    ) 
 );

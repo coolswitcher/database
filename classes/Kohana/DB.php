@@ -106,6 +106,20 @@ class Kohana_DB {
 	}
 
 	/**
+	 * Create a new [Database_Query_Builder_Replace].
+	 *
+	 *     // REPLACE users
+	 *     $query = DB::replace('users');
+	 *
+	 * @param   string  $table  table to update
+	 * @return  Database_Query_Builder_Replace
+	 */
+	public static function replace($table = NULL)
+	{
+		return new Database_Query_Builder_Replace($table);
+	}
+
+	/**
 	 * Create a new [Database_Query_Builder_Delete].
 	 *
 	 *     // DELETE FROM users

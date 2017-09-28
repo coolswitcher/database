@@ -19,10 +19,11 @@
 abstract class Kohana_Database {
 
 	// Query types
-	const SELECT =  1;
-	const INSERT =  2;
-	const UPDATE =  3;
-	const DELETE =  4;
+	const SELECT  =  1;
+	const INSERT  =  2;
+	const UPDATE  =  3;
+	const DELETE  =  4;
+	const REPLACE =  5;
 
 	/**
 	 * @var  string  default instance name
